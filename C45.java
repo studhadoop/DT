@@ -205,35 +205,6 @@ public class C45 extends Configured implements Tool {
 	public static void writeRuleToFile(String text) throws IOException {
 		System.out.println("In main() +++++++ writeRuleToFile ");
 		
-		
-//		try {
-//		    //set user group information      	
-//		            UserGroupInformation ugi = UserGroupInformation.createRemoteUser("hdfs");
-//		    //set privilege exception
-//		            		ugi.doAs(new PrivilegedExceptionAction<Void>() {
-//		            		public Void run() throws Exception {
-//		    //create configuration object
-//		                	Configuration config = new Configuration();
-//		                	
-//		                    config.set("fs.defaultFS", "hdfs://10.31.0.35:8020/");
-//		                    config.set("hadoop.job.ugi", "hdfs");
-//		                    FileSystem dfs = FileSystem.get(config);
-//		                    Path path = new Path("/user/dataadmin/C45/r.txt");
-//		                    if (dfs.exists(path))
-//		                    	dfs.delete(path, true);
-//		                    FSDataOutputStream outputStream = dfs.create(path);
-//		                 
-//		        			
-//		    
-//		                    return null;
-//		                }
-//
-//											
-//		            });
-//		        } 
-//		        catch (Exception e) {
-//		            e.printStackTrace();
-//		        }
 	
 
 			 try {
@@ -264,9 +235,7 @@ public class C45 extends Configured implements Tool {
 		conf.setReducerClass(Reduce.class);
 
 
-		//set your input file path below
-		//"/home/sreeveni/myfiles/DT/Id3_hds/iris.txt"
-		//out - /home/sreeveni/myfiles/DT/DTOut
+	
 		FileSystem fs = FileSystem.get(conf);
 
 		Path out = new Path(args[1] + current_index);
