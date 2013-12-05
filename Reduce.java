@@ -56,11 +56,7 @@ implements Reducer<Text, IntWritable, Text, IntWritable> {
 				Configuration conf = new Configuration();
 			
 			
-			//Path intermediateInfo = new Path("C45/rule.txt");
-//			 FileSystem fs = FileSystem.get(conf);
-//			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(fs.create(new Path("C45/intermediate"+id.current_index+".txt"), true)));
-			//BufferedWriter bw = new BufferedWriter(new FileWriter(new File("/home/sreeveni/workspace/DecTr/C45/intermediate"+id.current_index+".txt"), true));    
-				BufferedWriter bw = new BufferedWriter(new FileWriter(new File("C45/intermediate"+id.current_index+".txt"), true));    
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File("C45/intermediate"+id.current_index+".txt"), true));    
 				bw.write(text);
 			bw.newLine();
 			bw.close();
